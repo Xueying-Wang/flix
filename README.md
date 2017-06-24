@@ -43,7 +43,7 @@ Here are two versions of walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/G98Onnw.gif' title='Video Walkthrough - Version 1' width='' alt='Video Walkthrough' />
 
-<img src='http://i.imgur.com/G98Onnw.gif' title='Video Walkthrough - Version 2' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/GErbrpm.gif' title='Video Walkthrough - Version 2' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
