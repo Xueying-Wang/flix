@@ -14,10 +14,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var popularityLabel: UILabel!
     
     var movie: [String: Any]?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,10 @@ class DetailViewController: UIViewController {
         if let movie = movie {
             titleLabel.text = movie["title"] as? String
             releaseDateLabel.text = movie["release_date"] as? String
+            rateLabel.text = "Rate: \(movie["vote_average"]!)"
+            popularityLabel.text = "Popularity: \(movie["popularity"]!)"
             overviewLabel.text = movie["overview"] as? String
+            
             let backdropPathString = movie["backdrop_path"] as! String
             let posterPathString = movie["poster_path"] as! String
             let baseURLString = "https://image.tmdb.org/t/p/w500"
@@ -37,6 +41,11 @@ class DetailViewController: UIViewController {
             posterImageView.af_setImage(withURL: posterPathURL)
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let trailerViewController = segue.destination as! TrailerViewController
+        trailerViewController.movie = movie
     }
 
     override func didReceiveMemoryWarning() {
